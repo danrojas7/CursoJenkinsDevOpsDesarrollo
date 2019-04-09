@@ -54,8 +54,70 @@ Para aprovechar al máximo la IC, un equipo necesita adoptar una mentalidad de IC
 - El proceso de implementación debe ser automático sin pasos manuales involucrados
 - Todos los miembros del equipo deben enfocarse en contribuir a pruebas de alta calidad
 
+Breve historia de Jenkins
+- Es un servidor de IC y construcción
+- Se utiliza para construir proyectos de desarrollo de software de manera manual, periódica o automática. Estos proyectos de compilación pueden incluir algunas complicaciones, ejecutando pruebas automatizadas, empaquetado, o incluso implementando en producción.
+- Es una herramienta de ID de código abierto escrita en Java
+- Es utilizada por equipos de varios tamaños, para proyectos con varios lenguajes. Ejemplo de ello es Java, Next, PHP, Ruby, y Groovy
+
+¿Por qué Jenkins es tan ampliamente utilizado?
+
+- Interfaz de usuario es ampliamente fácil de usar, e inuitiva, y visualmente atractiva
+- Extremadamente flexible y fácil para adaptar a sus propios fines, se pueden encontrar miles de complementos de código abierto disponibles, estos complementos proporcionan varias funcionalidades, como por ejemplo:
+   - Soporte a varios sistemas de control de versiones
+   - Métricas de calidad de código
+   - Notificaciones de compilación
+   - Personalización de UI
+
+Historia de Jenkins
+- Inició en el verano en 2004 en Sun Microsystems, por Kohsuke Kawaguchi como un proyecto hobby, llamado proyecto Hudson
+- Fue lanzado en el proyecto 2005
+- A medida de que Hudson fue evolucionando, Sun Microsystems lo fue integrando en sus propios proyectos
+- Kohsuke trabajó en Hudson a tiempo completo a inicios de 2008, ya que Sun Microsystems reconoció el valor del proyecto, para proporcionar servicios profesionales y apoyo alrededor de Hudson
+- Para 2010, se había convertido enla solución de integración continua líder con una participación en el mercado de más de 70%
+- El proyecto fue renombrado a Jenkins en el año 2011
 
 
+ADVERTENCIA
+Java 9 en el momento no está soportado por Jenkins, por lo tanto se debe utilizar Java 8 por el momento
 
+- Jenkins requiere java 7 como mínimo
+- Se recomienda instalar Java 8
+- Se requiere que el directorio del JDK 8 en la variable de entorno JAVA_HOME del sistema operativo utilizado
+
+
+Directivas para instalar Java
+Configurando Java_Home en Windows:
+
+Clic derecho en My Computer y seleciona Properties.
+En la pestaña Advanced, selecciona Environment Variables, y luego JAVA_HOME para dirigirlo a la ubicación del programa JDK, por ejemplo, C:\Program Files\Java\jdk1.6.0_02
+Configurando Java_Home en Linux:
+Inicia sesión con tu cuenta y abre el archivo startup script que es usualmente el archivo ~/.bash_profile  (o puede ser .bashrc dependiendo de la configuración de tu entorno)
+$ vi ~/.bash_profile
+
+En el startup script, escribe JAVA_HOME y PATH
+
+C shell:
+    setenv JAVA_HOME jdk-install-dir
+    setenv PATH $JAVA_HOME/bin:$PATH
+    export PATH=$JAVA_HOME/bin:$PATH
+
+jdk-install-dir  es el directorio de instalación de JDK, que debería ser algo similar a /usr/java/jdk1.5.0_07/bin/java
+
+Bourne shell:
+    JAVA_HOME=jdk-install-dir
+    export JAVA_HOME
+    PATH=$JAVA_HOME/bin:$PATH
+    export PATH
+
+Korn y bash shells:
+    export JAVA_HOME=jdk-install-dir
+    export PATH=$JAVA_HOME/bin:$PATH
+
+Escribe el siguiente comando para activar la configuración de la nueva ruta de inmediato:
+    $ source ~/.bash_profile
+
+Verifica la nueva configuración: $ echo $JAVA_HOME
+    $ echo $PATH
 
 
