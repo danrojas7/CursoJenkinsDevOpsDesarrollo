@@ -1,0 +1,61 @@
+Jenkins es una herramienta de construcción e integración continua
+
+Integración continua
+- Desarrolladores deben integrar el código dentro del repositorio varias veces al día
+- Sistema de control de versiones es monitoreado, cuando un cambio es detectado, el sistema construirá y ejecutará la aplicación
+- Si la ejecución o construcción no es exitosa, notificará a los desarrolladores
+
+¿Por qué se necesita IC?
+- Detección de problemas o bugs tan pronto como sea posible
+- Como el código base completo es integrado, construido y ejecutado constantemente, los potenciales bugs y errores son descubiertos tempranamente en el ciclo de vida, lo cual resulta en un software de mejor calidad
+
+Diferentes etapas de adopción de IC
+
+Etapa 1
+- No existen servidores build, las aplicaciones son construidas manualmente en las estaciones de trabajo de los desarrolladores
+- No se les exige a los desarrolladores que registren los cambios continuamente
+- Los cambios son integrados y ejecutados manualmente, un desarrollador o un Gerente de lanzamiento, integra los cambios manualmente, en esta etapa, los cambios de los desarrolladores son agrupados e integrados en un solo producto, esto puede tardar incluso meses en integrar los cambios conflictivos, lo puede conllevar en detectar problemas y en demoras en solucionar problemas que de otra forma se hubieran podido solucionar meses atrás, por lo tanto se requieren de mucho esfuerzo solucionarlos ya que se deben escribir muchas líneas de código necesarias para arreglarlos
+- Este proceso completo puede llevar a retrasos en la fecha de entrega de los productos estables
+
+Etapa 2
+- Los builds automatizados son programados de manera regular, usualmente en las noches
+- El build script compilaría la aplicación y ejecutaría un grupo de pruebas automatizadas
+- Ahora, los desarrolladores versionan sus cambios de manera regular, usualmente al final de cada jornada laboral
+- Si el trabajo de un desarrollador entra en conflicto con los cambios de otro, el servidor build alertará a los miembros del equipo en caso de presentarse el conflicto
+
+Etapa 3
+- Ahora el equipo está comenzando a realizar Integración Continua y pruebas automatizadas
+- El servidor build ahora está configurado para comenzar una compilación cada vez que crea un código nuevo en el repositorio central. A menudo la compilación implica compilar la aplicación y ejecutar un conjunto de pruebas automatizadas o pruebas de integración. El servidor de compilación alerta a los miembros del equipo inmediatamente si una construcción falla. Las compilaciones defectuosas son tratadas generalmente como un problema de alta prioridad y se soluciona rápidamente
+
+Etapa 4
+- Calidad de código automatizada y métricas de cobertura de código son ahora ejecutadas junto con pruebas unitarias para evaluar continuamente la calidad del código.
+- Continuamente, el proceso de IC recopila información relevante útil sobre nuestro código base, seremos capaces de responder las siguientes preguntas:
+ ¿Estamos aumentando la cobertura del código?
+ ¿Tenemos cada vez menos errores de compilación?
+Esto ayudará a los equipos a mantener una alta calidad del código base, y los notificará si se están realizando buenas prácticas de pruebas
+
+Etapa 5
+- Se tienen mayor confianza en las pruebas unitarias y automatizadas, la integración y la aceptación, para que las pruebas sean simplemente automatizadas y se puedan enviar cambios directamente a producción
+
+Integración Continua
+Es la práctica de la fusión del trabajo de desarrollo con la rama principal constantemente, de manera que el código se prueba tan a menudo como se pueda para detectar problemas tempranamente
+Entrega Continua
+Es la entrega constante de código a un entorno, una vez que el código esté listo para ser enviado. Esto podría ser una puesta en escena o producción. Pero la idea es que el producto se entregue a una base de usuarios para revisión e inspección, quienes puedan ser aseguradores de calidad o clientes. Las pruebas unitarias y de integración continua no pueden detectar todos los errores, particularmente los problemas de diseño, debido a esto es necesario contar con aseguradores de calidad o un entorno de ensayo para las pruebas
+Implementación continua
+Es la implementación o la integración de código para producción tan pronto como esté listo. la implementación continua requiere de una integración continua y una entrega continua, de lo contrario la calidad del código no puede garantizarse en el lanzamiento
+
+¿Cómo implementar la integración continua?
+Existen diferentes productos y herramientas que pueden ayudar a implementar una integración continua en nuestra organización, algunas herramientas permiten alojar los servidores de IC en nuestra propia infraestructura de red tal como Jenkins, hay algunos otros productos alojados de IC tal como CircleCI, que están alojados en la nube.
+
+La integración contínua es una forma de pensar. Cuando la IC se introduce en una organización, cambia drásticamente la forma de que la organización piensa en todo el proceso de desarrollo. La IC no es solamente un conjunto de herramienta, sino también una mentalidad.
+
+Para aprovechar al máximo la IC, un equipo necesita adoptar una mentalidad de IC
+- La reparación de compilaciones defectusas debe tratarse como una problemática de alta prioridad para todos los miembros del equipo
+- El proceso de implementación debe ser automático sin pasos manuales involucrados
+- Todos los miembros del equipo deben enfocarse en contribuir a pruebas de alta calidad
+
+
+
+
+
+
