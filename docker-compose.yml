@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  jenkins:
+    image: 'jenkins/jenkins:latest'
+    ports:
+      - '8080:8080'
+      - '50001:50001'
+    environment:
+      - JAVA_OPTS="-Djava.util.logging.config.file=/var/jenkins_home/log.properties" 
+    volumes:
+      - 'jenkins_home:/var/jenkins_home'
+volumes:
+  jenkins_home:
+    driver: local
