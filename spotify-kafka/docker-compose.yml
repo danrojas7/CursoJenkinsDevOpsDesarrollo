@@ -1,10 +1,14 @@
 version: '2'
 
 services:
-  spotify-kafka:
-    image: 'spotify/kafka'
-    ports:
-      - '2181:2181'
-      - '9092:9092'
-    environment:
-      - ALLOW_PLAINTEXT_LISTENER=yes
+        spotify-kafka:
+                container_name: 'spotify-kafka'
+                image: 'spotify/kafka'
+                #image: 'spotify/kafkaproxy'
+                ports:
+                        - '2181:2181'
+                        - '9092:9092'
+                environment:
+                        - ALLOW_PLAINTEXT_LISTENER=yes
+                        - ADVERTISED_HOST=spotify-kafka
+                        - ADVERTISED_PORT=9092
