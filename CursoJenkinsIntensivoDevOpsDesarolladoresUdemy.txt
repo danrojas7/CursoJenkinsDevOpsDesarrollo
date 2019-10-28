@@ -117,7 +117,57 @@ Korn y bash shells:
 Escribe el siguiente comando para activar la configuración de la nueva ruta de inmediato:
     $ source ~/.bash_profile
 
-Verifica la nueva configuración: $ echo $JAVA_HOME
+Verifica la nueva configuración:
+    $ echo $JAVA_HOME
     $ echo $PATH
+
+Descargar e Instalar Jenkins
+    - Ir a la página https://jenkins.io/download/
+    - Descargar el instalador de Jenkins para el sistema operativo requerido, descargar la versión LTS
+    - Ir a la direccion http://localhost:8080
+    - Ir a la ruta del archivo en la terminal, para obtener la contraseña del administrador, puede que tenga que ser administrador del sistema para que le permita visualizar el contenido del archivo con la contraseña del administrador
+    - Ingresar con la contraseña, cuando pregunte si instalar los plugins recomendados, puede hacer caso de esa sugerencia o simplemente cerrar la ventana para ir instalando los plugins requeridos conforme se vayan necesitando
+    - Setear la contraseña para el usuario admin
+
+Arquitectura y términos claves de Jenkins
+Jenkins utiliza una arquitectura master-slave, para gestionar los buils
+
+Master:
+    - Gestiona los build jobs
+    - Destina build a los slaves para la ejecución del job real
+    - Monitorea los slaves y registra los resultados del build
+    - Puede ejecutar build jobs directamente
+      Vale la pena mencionar que aun en una arquitectura distribuida, la característica master de Jenkins puede ejecutar también build jobs directamente
+
+Slave:
+Un slave de Jenkins es un pequeño programa Java que es llamado a ejecutarse por encargo del master. El trabajo de los slaves es hacer lo que se les dice que es principalmente:
+    - Ejecutar build jobs enviados por el master
+      Es posible configurar un job para que siempre se corra en una máquina slave al titular, o un tipo espífico de máquina slave
+
+Job / Project
+Jenkins usa los dos términos indistintamente. Se refieren a tareas ejecutables que son controladas o monitoreadas por Jenkins
+
+Slave / Node
+- Slave son computadora que son establecidas para construir proyectos para un master
+- Jenkins ejecuta un programa por separado llamado "slave agent" en los slaves
+- Cuando los slaves están registrados a un master, el master empieza a distribuir los trabajos a los slaves
+- Node se utiliza para referirse a todas las máquinas que son parte de una malla Jenkins, slaves y master
+
+Executor
+- Es una rama de builds a ser ejecutados en un node en paralelo
+- Un node puede tener uno o varios executors
+
+Build
+- Un build es un resultado de uno de los proyectos
+
+Plugin
+- Un plugin, como cualquier otro sistema, es una pieza de software que amplia la funcionalidad fundamental del servidor central de Jenkins
+
+Descripción general de la consola web de Jenkins
+- La sección principal en la landing pages, es lael job listing section, que se supone tiene nuestra lista de trabajo, sin embargo en una instalación nueva de jenkins, no existe todavía una lista de trabajos
+- En el lado izquierdo hay unos menús
+
+
+
 
 
